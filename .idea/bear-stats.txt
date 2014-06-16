@@ -1,0 +1,7 @@
+Create a website for conducting surveys of Berkeley students. This would allow students to express their opinion anonymously and policy makers make better decisions. This is different from the official UC Berkeley survey because the survey questions can be shaped by popular demands and can be more responsive to pressing issues (more responsive than a once-an-year survey)
+Also, these surveys is diffrentiated from all other surveys because it will have a target of ALL UC Berkeley Students and not just students of a particular major or department or users of a particular facilities. In short, these surveys will ask questions on topics that affect all students and will hopefully shape University policy.
+
+Some goals of this website:
+- Survey questions must be approved by students representing a majority of the population
+- Survey results are always available (for life)
+
