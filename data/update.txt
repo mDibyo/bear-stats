@@ -1,0 +1,7 @@
+This file defines parts of the code that needs to be updated on a regular basis to keep the website current. Frequency of update is mentioned in [brackets].
+Files are specified with respect to the root directory.
+
+/djSite
+    /results
+        /models.py
+        - class User: SEMESTER, entry_semester, grad_semester [semester]

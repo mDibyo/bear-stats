@@ -2,7 +2,7 @@ from django.db import models
 
 
 class User(models.Model):
-    # Common options for different questions
+    # Common options for different fields
     SEMESTERS = (('FA09', 'Fall 2009'),
                  ('SP10', 'Spring 2010'),
                  ('FA10', 'Fall 2010'),
@@ -30,8 +30,8 @@ class User(models.Model):
     username = models.CharField(max_length=20)
     
     # Keep track of when users are entering and graduating to keep data current
-    entry_semester = models.CharField(max_length=1, choices=SEMESTERS[:11])
-    grad_semester = models.CharField(max_length=1, choices=SEMESTERS[11:])
+    entry_semester = models.CharField(max_length=1, choices=SEMESTERS[:11]) # Entry semester
+    grad_semester = models.CharField(max_length=1, choices=SEMESTERS[11:]) # Graduation semester
 
 
 class SurveyResult(models.Model):
