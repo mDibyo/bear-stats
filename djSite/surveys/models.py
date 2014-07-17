@@ -71,7 +71,7 @@ class Survey(models.Model):
 class Question(models.Model):
     """
     Each Question is stored in the database in addition to the JSON files of
-    individual surveys. This is to decouple them from individual surveys and 
+    individual surveys. This is to decouple them from individual surveys and
     consider them by themselves and in context to other questions asked in
     perhaps a different survey.
 
@@ -83,6 +83,7 @@ class Question(models.Model):
     question_text = models.CharField(max_length=200)
     create_date = models.DateField('date created')
     reply_type = models.CharField(max_length=20)
+    surveys = models.ManyToManyField(Survey)
 
     def __str__(self):
         return self.question_text
