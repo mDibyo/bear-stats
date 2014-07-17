@@ -28,7 +28,7 @@ class Survey(models.Model):
         "context": "This is the reason for creating this survey. This is
             entered purely for the sake of documentation. ",
         "questions": [{
-            "question_id": "This is the primary key of the question in the
+            "id": "This is the primary key of the question in the
                 database",
             "question_text": "What is question number 1?",
             "create_date": "07/16/2014",
@@ -48,7 +48,7 @@ class Survey(models.Model):
                 }]
             }
         }, {
-            "question_id": "This is the primary key of the question in the 
+            "id": "This is the primary key of the question in the 
                 database",
             "question_text": "What is question number 2?",
             "create_date": "07/16/2014",
@@ -62,13 +62,27 @@ class Survey(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     context = models.TextField()
-    questions_file = models.CharField(max_length=100)
+    survey_file = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title
 
 
 class Question(models.Model):
+    """
+    Each Question is stored in the database in addition to the JSON files of
+    individual surveys. This is to decouple them from individual surveys and 
+    consider them by themselves and in context to other questions asked in
+    perhaps a different survey.
+
+    It does not contain additional information like path to image resources or
+    options provided. It however does contain information about which surveys
+    had the question (Survey and survey file) so that the question can be
+    retrieved in its original context.
+    """
     question_text = models.CharField(max_length=200)
     create_date = models.DateField('date created')
-    reply_type = models.CharField(max_length=10)
+    reply_type = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.question_text
